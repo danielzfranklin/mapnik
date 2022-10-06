@@ -468,6 +468,7 @@ opts.AddVariables(
     BoolVariable('COLOR_PRINT', 'Print build status information in color', 'True'),
     BoolVariable('BIGINT', 'Compile support for 64-bit integers in mapnik::value', 'True'),
     BoolVariable('QUIET', 'Reduce build verbosity', 'False'),
+    BoolVariable('NO_OS', '(WIP) Replace OS-related (i.e. filesystem) code with stubs that abort', 'False')
     )
 
 # variables to pickle after successful configure step
@@ -494,6 +495,7 @@ pickle_store = [# Scons internal variables
         'LINK',
         'RUNTIME_LINK',
         # Mapnik's SConstruct build variables
+        'NO_OS',
         'PLUGINS',
         'ABI_VERSION',
         'MAPNIK_VERSION_STRING',

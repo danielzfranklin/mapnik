@@ -20,6 +20,8 @@
  *
  *****************************************************************************/
 
+#ifndef NO_OS
+
 // mapnik
 #include <mapnik/util/utf_conv_win.hpp>
 #include <mapnik/util/fs.hpp>
@@ -139,3 +141,68 @@ std::vector<std::string> list_directory(std::string const& dir)
 } // end namespace util
 
 } // end namespace mapnik
+
+#else // else NO_OS
+
+// mapnik
+#include <mapnik/util/fs.hpp>
+
+namespace mapnik {
+
+namespace util {
+
+bool exists(std::string const& filepath)
+{
+    abort();
+}
+
+bool is_directory(std::string const& filepath)
+{
+    abort();
+}
+
+bool is_regular_file(std::string const& filepath)
+{
+    abort();
+}
+
+bool remove(std::string const& filepath)
+{
+    abort();
+}
+
+bool is_relative(std::string const& filepath)
+{
+    abort();
+}
+
+std::string make_relative(std::string const& filepath, std::string const& base)
+{
+    abort();
+}
+
+std::string make_absolute(std::string const& filepath, std::string const& base)
+{
+    abort();
+}
+
+std::string dirname(std::string const& filepath)
+{
+    abort();
+}
+
+std::string basename(std::string const& value)
+{
+    abort();
+}
+
+std::vector<std::string> list_directory(std::string const& dir)
+{
+    abort();
+}
+
+} // end namespace util
+
+} // end namespace mapnik
+
+#endif // end NO_OS

@@ -39,6 +39,9 @@ def call(cmd, silent=True):
 def ldconfig(*args,**kwargs):
     call('ldconfig')
 
+if env['NO_OS']:
+    lib_env.Append(CPPDEFINES='-DNO_OS')
+
 if env['LINKING'] == 'static':
     lib_env.Append(CXXFLAGS="-fPIC")
 
