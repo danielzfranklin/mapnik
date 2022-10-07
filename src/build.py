@@ -279,6 +279,7 @@ source = Split(
     util/math.cpp
     util/mapped_memory_file.cpp
     value.cpp
+    for_rust.cpp
     """
     )
 
